@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>table隐藏和显示</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				font: "微软雅黑";
+				font-size: 16px;
+				color: #ffffff;
+			}
+			ul{
+				width: 90%;
+				height: 100%;
+				background-color: chartreuse;
+				padding: 0 5% 0 5%;
+			}
+			ul li{
+				width: 100%;
+				line-height: 150%;
+				margin-top: 3%;
+				text-decoration: none;
+				background: blue;
+				position: relative;
+			}
+			ul li div{
+				display: none;
+			}
+			.add{
+				background: red;
+			}
+			.add div{
+				display: block;
+			}
+			.add .sp-rt{
+				transition: all 0.5s;
+				transform: rotate(90deg);
+			}
+			span{
+				position: absolute;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li data-id='1'>
+				1
+				<span class="sp-rt">></span>
+				<div id="name1">name1</div>
+			</li>
+			<li data-id='2'>
+				2
+				<span class="sp-rt">></span>
+				<div id="name2">name2</div>
+			</li>
+			<li data-id='3'>
+				3
+				<span class="sp-rt">></span>
+				<div id="name3">name3</div>
+			</li>
+			<li data-id='4'>
+				4
+				<span class="sp-rt">></span>
+				<div id="name4">name4</div>
+			</li>
+			<li data-id='5'>
+				5
+				<span class="sp-rt">></span>
+				<div id="name5">name5</div>
+			</li>
+		</ul>
+	</body>
+</html>
+<script src="jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$('ul').on('click','li',function(){
+			$(this).toggleClass('add');
+		});
+		/*$('ul').on('click','li',function(){
+			var id = $(this).attr('data-id');
+			window.location.href = ''
+		});*/
+	})
+</script>
